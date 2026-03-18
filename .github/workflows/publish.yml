@@ -63,7 +63,7 @@ jobs:
 
       - name: Configure npm for GitHub Packages
         run: |
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.PACKAGES_TOKEN }}" > .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > .npmrc
           echo "@mattofficial:registry=https://npm.pkg.github.com" >> .npmrc
           echo "always-auth=true" >> .npmrc
 
