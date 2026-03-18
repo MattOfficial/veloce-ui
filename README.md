@@ -1,4 +1,4 @@
-# @MattOfficial/veloce-ui
+# @mattofficial/veloce-ui
 
 Veloce Design System UI components - a collection of reusable, accessible, and customizable React components built with Tailwind CSS and TypeScript.
 
@@ -6,20 +6,20 @@ Veloce Design System UI components - a collection of reusable, accessible, and c
 
 ### Using GitHub Packages
 
-The package is published to GitHub Packages. To install it, you need to configure npm to use the GitHub Packages registry for the `@MattOfficial` scope.
+The package is published to GitHub Packages. To install it, you need to configure npm to use the GitHub Packages registry for the `@mattofficial` scope.
 
 #### 1. Configure npm registry for GitHub Packages
 
 Create or update a `.npmrc` file in your project root:
 
 ```bash
-@MattOfficial:registry=https://npm.pkg.github.com
+@mattofficial:registry=https://npm.pkg.github.com
 ```
 
 Or add the registry configuration to your project's `.npmrc`:
 
 ```
-@MattOfficial:registry=https://npm.pkg.github.com
+@mattofficial:registry=https://npm.pkg.github.com
 ```
 
 #### 2. Authenticate with GitHub Packages
@@ -31,7 +31,7 @@ You need to authenticate with GitHub Packages. Create a personal access token wi
 3. Add the token to your npm configuration:
 
 ```bash
-npm login --registry=https://npm.pkg.github.com --scope=@MattOfficial
+npm login --registry=https://npm.pkg.github.com --scope=@mattofficial
 ```
 
 Or add it to your environment:
@@ -43,19 +43,19 @@ echo "//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN" >> ~/.npmrc
 #### 3. Install the package
 
 ```bash
-npm install @MattOfficial/veloce-ui
+npm install @mattofficial/veloce-ui
 ```
 
 Or with yarn:
 
 ```bash
-yarn add @MattOfficial/veloce-ui
+yarn add @mattofficial/veloce-ui
 ```
 
 ## 🚀 Quick Start
 
 ```tsx
-import { Button, Card, CardContent } from "@MattOfficial/veloce-ui";
+import { Button, Card, CardContent } from "@mattofficial/veloce-ui";
 
 function App() {
   return (
@@ -140,7 +140,7 @@ import type { Config } from "tailwindcss";
 const config: Config = {
   content: [
     // Add the path to veloce-ui components
-    "./node_modules/@MattOfficial/veloce-ui/dist/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@mattofficial/veloce-ui/dist/**/*.{js,ts,jsx,tsx}",
     // Your project files
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
@@ -156,13 +156,13 @@ The components use CSS variables for theming. Import the CSS in your application
 
 ```css
 /* In your global CSS file */
-@import "@MattOfficial/veloce-ui/styles";
+@import "@mattofficial/veloce-ui/styles";
 ```
 
 Or import it directly in your main entry file:
 
 ```typescript
-import "@MattOfficial/veloce-ui/styles";
+import "@mattofficial/veloce-ui/styles";
 ```
 
 ### Customizing Theme

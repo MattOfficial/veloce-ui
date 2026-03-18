@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: "20.x"
           registry-url: "https://npm.pkg.github.com"
-          scope: "@MattOfficial"
+          scope: "@mattofficial"
           cache: "npm"
 
       - name: Get version from package.json
@@ -41,7 +41,7 @@ jobs:
         id: check-version
         run: |
           # Try to fetch the package info, if it fails, version doesn't exist
-          if npm view @MattOfficial/veloce-ui@${{ steps.package-version.outputs.version }} --registry=https://npm.pkg.github.com 2>/dev/null; then
+          if npm view @mattofficial/veloce-ui@${{ steps.package-version.outputs.version }} --registry=https://npm.pkg.github.com 2>/dev/null; then
             echo "exists=true" >> $GITHUB_OUTPUT
             echo "Version ${{ steps.package-version.outputs.version }} already exists in registry"
           else
@@ -64,7 +64,7 @@ jobs:
       - name: Configure npm for GitHub Packages
         run: |
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.PACKAGES_TOKEN }}" > .npmrc
-          echo "@MattOfficial:registry=https://npm.pkg.github.com" >> .npmrc
+          echo "@mattofficial:registry=https://npm.pkg.github.com" >> .npmrc
           echo "always-auth=true" >> .npmrc
 
       - name: Publish to GitHub Packages
