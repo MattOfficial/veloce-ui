@@ -4,13 +4,6 @@ on:
   push:
     tags:
       - "v*"
-    branches:
-      - main
-    paths-ignore:
-      - "**.md"
-      - ".gitignore"
-      - "LICENSE"
-      - "README.md"
   workflow_dispatch:
     inputs:
       version:
