@@ -147,6 +147,7 @@ jobs:
           name: build-output
           path: |
             dist/
+            package.json
           retention-days: 1
 
   publish:
@@ -172,7 +173,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-output
-          path: dist/
+          path: .
 
       - name: Configure npm for GitHub Packages
         run: |
@@ -181,15 +182,16 @@ jobs:
           echo "always-auth=true" >> .npmrc
           echo "✓ NPM configured for GitHub Packages"
 
-      - name: Publish to GitHub Packages
+      - name: Update version from tag
         run: |
           VERSION="${{ needs.validate.outputs.version }}"
           TAG_VERSION="${VERSION#v}"
+          # Update version in package.json using sed (avoids running any npm scripts)
+          sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$TAG_VERSION\"/" package.json
+          echo "✓ Version updated to $TAG_VERSION"
 
-          # Update version in package.json directly to avoid running prepare script
-          npm pkg set version=$TAG_VERSION
-
-          npm publish --access public
+      - name: Publish to GitHub Packages
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
