@@ -186,8 +186,8 @@ jobs:
           VERSION="${{ needs.validate.outputs.version }}"
           TAG_VERSION="${VERSION#v}"
 
-          # Update version in package.json to match tag (skip prepare script which requires husky)
-          npm version $TAG_VERSION --no-git-tag-version --allow-same-version --ignore-scripts
+          # Update version in package.json directly to avoid running prepare script
+          npm pkg set version=$TAG_VERSION
 
           npm publish --access public
         env:
