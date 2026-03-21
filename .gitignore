@@ -3,3 +3,6 @@ playwright-report/
 test-results/
 coverage/
 qdrant_storage/
+
+# local builds
+*.tgz
