@@ -236,7 +236,11 @@ jobs:
             CHANGES=$(git log --no-merges --pretty=format:"- %s (%h)" -n 20)
           fi
 
-          echo "changelog=$CHANGES" >> $GITHUB_OUTPUT
+          {
+            echo "changelog<<EOF"
+            echo "$CHANGES"
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
