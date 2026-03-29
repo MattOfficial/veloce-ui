@@ -35,8 +35,8 @@ function DialogOverlay({
   className,
   overlayClassName,
   backdropBlur = "sm",
-  backdropOpacity = "60",
-  zIndex = "[1700]",
+  backdropOpacity = "65",
+  zIndex = "2000",
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Overlay> & {
   overlayClassName?: string
@@ -68,10 +68,10 @@ function DialogContent({
   children,
   showCloseButton = true,
   closeButtonClassName,
-  rounded = "lg",
+  rounded = "3xl",
   borderOpacity = "",
-  zIndex = "[1701]",
-  overlayZIndex = "[1700]",
+  zIndex = "2001",
+  overlayZIndex = "2000",
   overlay,
   overlayProps,
   ...props
