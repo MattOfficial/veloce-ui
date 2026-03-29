@@ -9180,7 +9180,7 @@ function hN({
   children: r,
   position: n = "popper",
   align: o = "center",
-  zIndex: a = "50",
+  zIndex: a = "2100",
   ...i
 }) {
   return /* @__PURE__ */ v(rO, { children: /* @__PURE__ */ ae(
@@ -12357,8 +12357,8 @@ function JM({
   className: e,
   overlayClassName: t,
   backdropBlur: r = "sm",
-  backdropOpacity: n = "60",
-  zIndex: o = "[1700]",
+  backdropOpacity: n = "65",
+  zIndex: o = "2000",
   ...a
 }) {
   const i = r === "none" ? "" : r === "sm" ? "backdrop-blur-sm" : r === "md" ? "backdrop-blur-md" : "backdrop-blur-lg";
@@ -12384,10 +12384,10 @@ function yN({
   children: r,
   showCloseButton: n = !0,
   closeButtonClassName: o,
-  rounded: a = "lg",
+  rounded: a = "3xl",
   borderOpacity: i = "",
-  zIndex: s = "[1701]",
-  overlayZIndex: c = "[1700]",
+  zIndex: s = "2001",
+  overlayZIndex: c = "2000",
   overlay: l,
   overlayProps: u,
   ...d
