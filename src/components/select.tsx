@@ -62,7 +62,7 @@ function SelectContent({
   children,
   position = "popper",
   align = "center",
-  zIndex = "50",
+  zIndex = "2100",
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.Content> & {
   contentClassName?: string
