@@ -30,7 +30,7 @@ export {
   SelectValue,
 } from "./components/select";
 export { Switch } from "./components/switch";
-export { Calendar, CalendarDayButton } from "./components/calendar";
+export { Calendar } from "./components/calendar";
 export {
   Dialog,
   DialogTrigger,
