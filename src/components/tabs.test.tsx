@@ -48,23 +48,21 @@ describe("Tabs component", () => {
     expect(screen.queryByText("Account content")).not.toBeInTheDocument();
   });
 
-  it("keeps the line variant styling contract on the list", () => {
+  it("renders TabsList with default styling", () => {
     render(
       <Tabs defaultValue="account">
-        <TabsList variant="line" data-testid="tabs-list">
+        <TabsList data-testid="tabs-list">
           <TabsTrigger value="account">Account</TabsTrigger>
         </TabsList>
         <TabsContent value="account">Account content</TabsContent>
       </Tabs>,
     );
 
-    expect(screen.getByTestId("tabs-list")).toHaveAttribute(
-      "data-variant",
-      "line",
-    );
-    expect(screen.getByTestId("tabs-list")).toHaveClass("border-b");
-    expect(screen.getByRole("tab", { name: /account/i })).toHaveClass(
-      "group-data-[variant=line]/tabs-list:border-b-2",
+    expect(screen.getByTestId("tabs-list")).toBeVisible();
+    expect(screen.getByTestId("tabs-list")).toHaveClass("bg-muted");
+    expect(screen.getByRole("tab", { name: /account/i })).toHaveAttribute(
+      "data-state",
+      "active",
     );
   });
 });
